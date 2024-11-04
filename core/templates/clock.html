@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ clock.name_clock }}, время: {{ clock.start_clock }} - {{ clock.end_clock }}</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Персонал</th>
+            <th scope="col">Время посешение</th>
+            <th scope="col">Аудитория</th>
+            <th scope="col">Предмет</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for record in attendance_data %}
+            <tr>
+                <td>{{ record.person_name }}</td>
+                <td>{{ record.attendance_time }}</td>
+                <td>{{ record.device_name }}</td>
+                <td>в разработке</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

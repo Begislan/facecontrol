@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>все персонажи</h1>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">PersonId</th>
+      <th scope="col">name</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for data in datas %}
+    <tr>
+      <th scope="row">{{ data.person_id }}</th>
+      <td>{{ data.person_name }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

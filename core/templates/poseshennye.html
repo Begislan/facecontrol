@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>посещенные</h1>
+
+    <table class="table table-bordered border-primary">
+        <thead>
+        <tr>
+            <th scope="col">PersonId</th>
+            <th scope="col">name</th>
+            <th scope="col">время посешение</th>
+            <th scope="col">ip camera</th>
+            <th scope="col">name camera</th>
+            <th scope="col">урок</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in datas %}
+            <tr>
+                <th scope="row">{{ data.person_id }}</th>
+                <td>{{ data.person_name }}</td>
+                <td>{{ data.formatted_date }}</td>
+                <td>{{ data.device_ip_address }}</td>
+                <td>{{ data.device_name }}</td>
+                <td>{{ data.lesson_name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{#    <table class="table table-striped-columns">#}
+{#        <tbody>#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th scope="row">Понидельник</th>#}
+{#            <th scope="row">Вторник</th>#}
+{#            <th scope="row">Среда</th>#}
+{#            <th scope="row">Четверг</th>#}
+{#            <th scope="row">Пятница</th>#}
+{#            <th scope="row">Субота</th>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td></td>#}
+{#            <td></td>#}
+{#            <td></td>#}
+{#            <td></td>#}
+{#            <td></td>#}
+{#            <td></td>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        </tbody>#}
+{#    </table>#}
+
+
+{% endblock %}

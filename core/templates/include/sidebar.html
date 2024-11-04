@@ -1,0 +1,53 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Facecontrol</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{% url 'index' %}"
+               class="nav-link text-white {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+               aria-current="page">
+                 <img class="" src="https://img.icons8.com/?size=100&id=108634&format=png&color=000000" width="30" height="30">
+                Все персоны
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'poseshennye' %}"
+               class="nav-link text-white {% if request.resolver_match.url_name == 'poseshennye' %}active{% endif %}">
+                <img class="" src="https://img.icons8.com/?size=100&id=107020&format=png&color=000000" width="30" height="30">
+                    Посешенные
+            </a>
+            <ul class="nav nav-pills flex-column mb-auto ms-5">
+                {% for clock in clocks %}
+                    <li class="nav-item">
+                        <a class="text-white" href="{% url 'clock' clock.name_clock %}">{{ clock.name_clock }}</a>
+                    </li>
+                    {% empty %}
+                    <li>No lessons found.</li>
+                {% endfor %}
+            </ul>
+        </li>
+
+    </ul>
+    <hr>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>mdo</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+    </div>
+</div>
