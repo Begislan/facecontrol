@@ -11,21 +11,21 @@ def index(request):
     datas = AttendanceRecordInfo.objects.all()
     # for i in datas:
     #     i.delete()
-    for i in range(500):
-        AttendanceRecordInfo.objects.create(
-        person_id= random.randint(10, 30000000),
-        person_name = 'Person' + str(random.randint(1,100000)),
-        person_card_no = random.randint(900000, 1000000),
-        attendance_date_time = str( random.randint(900000, 100000000000) + 1726759547000),
-        attendance_state = random.randint(0,1),
-        attendance_method = random.randint(0,15),
-        device_ip_address = str(random.randint(0,255)) + '.' +str(random.randint(0,255)) + '.'+str(random.randint(0,255)) + '.'+str(random.randint(0,255)),
-        device_name = "Hooli" + str(random.randint(1,1000)),
-        snapshots_path = '',
-        handler = 1,
-        attendance_utc_time =str( random.randint(900000, 1000000) + 1726759547),
-        remarks = 2
-        )
+    # for i in range(500):
+    #     AttendanceRecordInfo.objects.create(
+    #     person_id= random.randint(10, 30000000),
+    #     person_name = 'Person' + str(random.randint(1,100000)),
+    #     person_card_no = random.randint(900000, 1000000),
+    #     attendance_date_time = str( random.randint(900000, 100000000000) + 1726759547000),
+    #     attendance_state = random.randint(0,1),
+    #     attendance_method = random.randint(0,15),
+    #     device_ip_address = str(random.randint(0,255)) + '.' +str(random.randint(0,255)) + '.'+str(random.randint(0,255)) + '.'+str(random.randint(0,255)),
+    #     device_name = "Hooli" + str(random.randint(1,1000)),
+    #     snapshots_path = '',
+    #     handler = 1,
+    #     attendance_utc_time =str( random.randint(900000, 1000000) + 1726759547),
+    #     remarks = 2
+    #     )
     clocks = Clock.objects.all()
     context = {
         'datas': datas,
